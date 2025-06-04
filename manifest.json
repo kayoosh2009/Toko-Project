@@ -1,22 +1,20 @@
 {
-  "manifest_version": 3,
-  "name": "Toko New Tab",
+  "name": "Toko Extension",
   "version": "1.0",
-  "description": "Расширение: Кастомная страница новой вкладки для проекта Toko.",
+  "manifest_version": 3,
+  "description": "Toko browser override + рекламный блок",
+  "icons": {
+    "128": "icon.png"
+  },
   "chrome_url_overrides": {
     "newtab": "browser.html"
   },
-  "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
-  },
-  "permissions": [],
-  "host_permissions": [],
-  "web_accessible_resources": [
+  "content_scripts": [
     {
-      "resources": ["icon.png"],
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "js": ["ad-injector.js"],
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "permissions": ["scripting"]
 }
