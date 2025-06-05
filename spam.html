@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Интересная статья</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #1a1a1a;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #ffffff;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1.2rem;
+      color: #d0d0d0;
+    }
+
+    .timestamp {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Как технологии меняют нашу жизнь</h1>
+    <p>
+      В последние десятилетия технологии радикально изменили образ жизни
+      современного человека. От смартфонов до искусственного интеллекта —
+      каждый день мы сталкиваемся с новыми инновациями, которые делают нашу
+      жизнь удобнее, быстрее и интереснее.
+    </p>
+    <p>
+      Особенно заметно это в образовании, медицине и коммуникациях. Мы можем
+      учиться онлайн, консультироваться с врачами дистанционно и общаться с
+      друзьями на другом конце света всего за несколько секунд.
+    </p>
+    <div class="timestamp">Последняя загрузка: <span id="time"></span></div>
+  </div>
+
+  <script>
+    // Обновляем текущее время
+    document.getElementById('time').textContent = new Date().toLocaleTimeString();
+
+    // Перезагрузка каждые 3 секунды
+    setTimeout(() => {
+      location.reload();
+    }, 3000);
+  </script>
+</body>
+</html>
